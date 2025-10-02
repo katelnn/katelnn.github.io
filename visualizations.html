@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KL Visualizations</title>
+  <link href="style.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-box">
+      <a class="logo-link-style" href="index.html">
+        <img class="logo" src="flower-logo.svg" alt="Kate Luong Website Logo">
+      </a>
+      <nav class="main-nav-style">  
+        <a class="nav-text" href="index.html#about">About</a>
+        <a class="nav-text" href="index.html#projects">Projects</a>
+        <a class="nav-text" href="index.html#contact">Contact</a>
+        <a class="nav-text" href="index.html#resume">Resume</a>
+        <a class="nav-text" href="visualizations.html">Visualizations</a>
+      </nav>
+    </div>
+
+    <div class="home-banner">
+        <div class="home-text">
+          <h2 class="home-h1">My Visualizations!</h2>
+        </div>
+      </div>
+  </header>
+
+  <!-- WEEKLY HOURS BAR CHART -->
+  <section class="sub-section" id="weekly-hours">
+    <h2>Weekly Hours</h2>
+    <div class="sub-section-item">
+      <svg id="main-svg" width="100%" height="400"></svg>
+    </div>
+  </section>
+
+  <!-- CIRCLES ANIMATION -->
+  <section class="sub-section" id="creative-art">
+    <h2>Creative SVG Art</h2>
+    <div class="sub-section-item">
+      <svg id="creative-svg" width="600" height="400"></svg>
+      <br/>
+      <input type="button" value="Start" onclick="startAnimation()" />
+      <input type="button" value="Stop" onclick="stopAnimation()" />
+    </div>
+  </section>
+  
+
+  <script src="main.js"></script>
+  <script src="vis.js"></script>
+</body>
+</html>

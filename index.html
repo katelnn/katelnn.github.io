@@ -1,27 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kate Luong - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KL Personal Website</title>
+  <link href="style.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header>
-    <h1>Welcome to My Personal Website</h1>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="visualizations.html">Visualizations</a>
-    </nav>
+    <div class="header-box">
+      <a class="logo-link-style" href="index.html">
+        <img class="logo" src="flower-logo.svg" alt="Kate Luong Website Logo">
+      </a>
+      
+      <nav class="main-nav-style">  
+        <a class="nav-text" href="#about">About</a>
+        <a class="nav-text" href="#projects">Projects</a>
+        <a class="nav-text" href="#contact">Contact</a>
+        <a class="nav-text" href="#resume">Resume</a>
+        <a class="nav-text" href="visualizations.html">Visualizations</a>
+      </nav>
+    </div>
+
+    <div class="home-banner">
+      <img src="self-portrait.png" alt="Self Portrait of Kate" class="profile-img">
+      <div class="home-text">
+        <h1 class="home-h1">Hi, I'm Kate!</h1>
+        <p>I’m an <span class="highlight">Interactive Arts & Technology student</span> who enjoys exploring new places,
+          listening to music, and going to concerts. As I explore, I like observing how people, objects, and spaces
+          interact, and I use these observations to inspire engaging, interactive designs and experiences.</p>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <h2>About Me</h2>
-    <p>This is my portfolio site for IAT 355. Here you’ll find my education, experience, skills, and projects.</p>
-  </main>
+  <!-- EDUCATION -->
+  <section class="sub-section" id="education">
+    <h2>Education</h2>
+    <div class="sub-section-item">
+      <h3>Simon Fraser University</h3>
+      <p>Bachelor of Interactive Arts & Technology (Expected graduation 2026)</p>
+      <ul>
+        <li>IAT 333 – Interaction Design Methods</li>
+        <li>IAT 334 – Interface Design</li>
+        <li>IAT 339 – Web Design and Development</li>
+        <li>IAT 359 – Mobile Computing</li>
+      </ul>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Kate Luong</p>
-  </footer>
+  <!-- SKILLS -->
+  <section class="sub-section" id="skills">
+    <h2>Technical Skills</h2>
+    <div class="sub-section-item">
+      <ul>
+        <li>Figma</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React Native</li>
+        <li>Adobe XD</li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+  
+    <div class="projects-container">
+      <div class="project">
+        <a class="img-link" href="#" onclick="projectInProgress('GDG Vancouver Dashboard')">
+          <img class="project-img" src="project1.png" alt="Project 1">
+          <div class="overlay"></div>
+        </a>
+        <div class="caption">
+          <h3>GDG Vancouver Dashboard</h3>
+          <p>A mobile app for volunteers and attendees to easily manage their schedule and navigate GDG events.</p>
+        </div>
+      </div>
+      
+  
+      <div class="project">
+        <a class="img-link" href="#" onclick="projectInProgress('SFU Satellite Website')">
+          <img class="project-img" src="project2.png" alt="Project 2">
+          <div class="overlay"></div>
+        </a>
+        <div class="caption">
+          <h3>SFU Satellite Website</h3>
+          <p>A website for mission operators to access project data and for newcomers to learn about the satellite program.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CONTACT -->
+<section class="sub-section" id="contact">
+  <h2>Contact</h2>
+  <div class="sub-section-item contact-info">
+    <p>You can reach me via email: 
+      <a href="mailto:kateluong2017@gmail.com">kateluong2017@gmail.com</a>
+    </p>
+    <p>Connect with me on LinkedIn: 
+      <a href="https://www.linkedin.com/in/kate-luong-721865234/" target="_blank">linkedin.com/in/kate-luong</a>
+    </p>
+    <p>Check out my GitHub: 
+      <a href="https://github.com/katelnn" target="_blank">github.com/katelnn</a>
+    </p>
+  </div>
+</section>
+
+<script src="main.js"></script>
+
+
 </body>
 </html>

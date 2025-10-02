@@ -1,5 +1,7 @@
 **Portfolio Website & Visualizations Assignment
 **
+
+
 For this project, I made a personal portfolio website to show my work, skills, and some interactive SVG visualizations I built with JavaScript. The website has sections like About Me, Education, Skills, Projects, and Contact info, and it also includes a page with my visualizations.
 
 **Features**

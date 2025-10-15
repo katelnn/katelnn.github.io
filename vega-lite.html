@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vega-Lite Visualizations | Kate Luong</title>
+  <link href="style.css" rel="stylesheet">
+
+  <!-- Vega-Lite Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-box">
+      <a class="logo-link-style" href="index.html">
+        <img class="logo" src="flower-logo.svg" alt="Kate Luong Website Logo">
+      </a>
+      <nav class="main-nav-style">
+        <a class="nav-text" href="index.html">Home</a>
+        <a class="nav-text" href="vega-lite.html">Vega-Lite Visualizations</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="sub-section" id="vega-lite-section">
+    <h1>Video Games Sales Data</h1>
+  
+    <!-- Dataset Description -->
+    <section class="dataset-summary">
+      <h2>Dataset Overview</h2>
+      <p>
+        The dataset <code>videogames_wide.csv</code> includes <strong>16,598 video games</strong> released 
+        between <strong>1980 and 2020</strong>. It records each game’s <em>name, platform, genre, publisher,</em> 
+        and <em>sales across four regions</em> (North America, Europe, Japan, and Others), 
+        along with total <strong>global sales</strong> measured in millions of units. 
+        This provides insight into how gaming trends evolved over time and which titles defined each era.
+      </p>
+  
+      <div class="accordion-container">
+        <!-- 1. Average Global Sales -->
+        <details class="accordion">
+          <summary><strong>Average Global Sales</strong></summary>
+          <div class="accordion-content">
+            <ul>
+              <li><strong>Mean:</strong> 0.54M copies per title</li>
+              <li><strong>Median:</strong> 0.17M (skewed long tail)</li>
+              <li><strong>Range:</strong> 0.01 – 82.74M copies</li>
+              <li><strong>Standard Deviation:</strong> 1.56M</li>
+            </ul>
+            <p>
+              A high standard deviation means that sales figures vary widely from game to game. While 
+              most titles sell only a fraction of a million copies, some outliers perform far above average. 
+              This uneven distribution reveals the industry’s hit-driven nature.
+            </p>
+          </div>
+        </details>
+  
+        <!-- 2. Most Frequent Genres -->
+        <details class="accordion">
+          <summary><strong>Most Frequent Genres</strong></summary>
+          <div class="accordion-content">
+            <ul>
+              <li><strong>1.</strong> Action (3,316 titles)</li>
+              <li><strong>2.</strong> Sports (2,346 titles)</li>
+              <li><strong>3.</strong> Miscellaneous (1,739 titles)</li>
+            </ul>
+            <p>
+              These genres consistently top global sales and release counts, showing players’ 
+              preference for fast-paced, competitive, and accessible gameplay experiences.
+            </p>
+          </div>
+        </details>
+  
+        <!-- 3. Most Popular Platforms -->
+        <details class="accordion">
+          <summary><strong>Most Popular Platforms</strong></summary>
+          <div class="accordion-content">
+            <ul>
+              <li><strong>1.</strong> Nintendo DS (2,163 titles)</li>
+              <li><strong>2.</strong> PlayStation 2 (2,161 titles)</li>
+              <li><strong>3.</strong> PlayStation 3 (1,329 titles)</li>
+            </ul>
+            <p>
+              Consoles from the 2000s dominate both releases and total sales. 
+              The PS2, Wii, and DS marked a peak era for physical game sales before digital 
+              distribution reshaped the market.
+            </p>
+          </div>
+        </details>
+  
+        <!-- 4. Variables in the Dataset -->
+        <details class="accordion">
+          <summary><strong>Variables in the Dataset</strong></summary>
+          <div class="accordion-content">
+            <ul>
+              <li><strong>Name:</strong> Categorical (the title of the video game).</li>
+              <li><strong>Platform:</strong> Categorical (the console or system the game was released on e.g., PS2, Wii, DS).</li>
+              <li><strong>Year:</strong> Discrete numerical (release year ranging from 1980 to 2020).</li>
+              <li><strong>Genre:</strong> Categorical (game category such as Action, Sports, or Role-Playing).</li>
+              <li><strong>Publisher:</strong> Categorical (the company that published the game).</li>
+              <li><strong>NA_Sales, EU_Sales, JP_Sales, Other_Sales:</strong> Continuous numerical (regional sales measured in millions of units).</li>
+              <li><strong>Global_Sales:</strong> Continuous numerical (total worldwide sales for all regions).</li>
+            </ul>
+            <p>
+              The mix of categorical and numerical variables allows for both classification-based and quantitative analysis.
+              The <code>Year</code> and sales data provide measurable trends over time, while fields like <code>Genre</code> and
+              <code>Platform</code> help compare how different segments of the gaming market perform globally.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+  
+    <!-- Visualization 1 -->
+    <section class="visualization-section">
+      <h3>1. Global Sales by Genre and Platform</h3>
+      <div class="visualization-chart" id="vis1"></div>
+      <details class="reflection-box">
+        <summary><strong>Data Reflection</strong></summary>
+        <div class="reflection-content">
+          <p>
+            The heatmap shows that <strong>PlayStation 2, PlayStation 3, Wii, and DS</strong> dominate global sales, mainly in 
+            <em>Action</em>, <em>Sports</em>, and <em>Shooter</em> genres. These platforms thrived in the mid-2000s thanks to large game 
+            libraries and major franchises like <em>FIFA</em> and <em>Call of Duty</em>. In contrast, <strong>Nintendo’s consoles</strong> 
+            perform best in Platform and Sports genres, showing their strength in casual and family-oriented titles. Lower sales in Puzzle 
+            and Strategy genres indicate limited mainstream appeal for niche games.
+          </p>
+        </div>
+      </details>
+    </section>
+  
+    <!-- Visualization 2 -->
+    <section class="visualization-section">
+      <h3>2. Sales Over Time by Platform and Genre</h3>
+      <div class="visualization-chart" id="vis2"></div>
+      <details class="reflection-box">
+        <summary><strong>Data Reflection</strong></summary>
+        <div class="reflection-content">
+          <p>
+            Sales trends reveal cyclical peaks tied to major console releases, with the <strong>PS2</strong> and <strong>Wii</strong> reaching record highs through globally appealing 
+            Sports and Action titles. Handheld platforms like the <strong>DS</strong> and <strong>3DS</strong> show smaller but steadier sales, reflecting a loyal audience for 
+            portable and Role-Playing games. In contrast, <strong>PC sales</strong> fluctuate modestly across genres, suggesting a more fragmented but consistent player base.
+          </p>
+        </div>
+      </details>
+    </section>
+  
+    <!-- Visualization 3 -->
+    <section class="visualization-section">
+      <h3>3. Regional Sales vs. Platform</h3>
+      <div class="visualization-chart" id="vis3"></div>
+      <details class="reflection-box">
+        <summary><strong>Data Reflection</strong></summary>
+        <div class="reflection-content">
+          <p>
+            Regional analysis shows that <strong>North America</strong> dominates console sales, especially for the <em>PS2</em>, <em>Xbox 360</em>, and <em>Wii</em>, reflecting its strong preference 
+            for Action and Sports games. <strong>Japan</strong> contrasts sharply, with higher sales on handheld systems like the <em>DS</em> and <em>PSP</em>, demonstrating its cultural 
+            preference for portable and Role-Playing titles. <strong>Europe</strong> follows similar trends to North America, while emerging regions show gradual growth, signaling 
+            gaming’s global expansion.
+          </p>
+        </div>
+      </details>
+    </section>
+  
+    <!-- Visualization 4 -->
+    <section class="visualization-section">
+      <h3>4. Genre Preferences by Region</h3>
+      <div class="visualization-chart" id="vis4"></div>
+      <details class="reflection-box">
+        <summary><strong>Data Reflection</strong></summary>
+        <div class="reflection-content">
+          <p>
+            This interactive chart reveals that <strong>Western markets (NA & EU)</strong> prioritize <em>Action</em>, <em>Sports</em>, and <em>Shooter</em> genres, driven by competitive and 
+            fast-paced gameplay. <strong>Japan</strong>, however, overwhelmingly favors <em>Role-Playing</em> games, underscoring its storytelling-driven gaming culture. Other regions 
+            mirror Western preferences but at smaller scales, suggesting rising global interest in mainstream genres and shared gaming trends.
+          </p>
+        </div>
+      </details>
+    </section>
+  </main>
+  
+
+  <script src="vega-lite.js"></script>
+</body>
+</html>
